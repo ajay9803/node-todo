@@ -1,11 +1,11 @@
 import express from "express";
 
 import userRouter from "./user";
-// import projectRouter from "./project";
+import todoRouter from "./todo";
 
 const router = express();
 
 router.use("/users", userRouter);
-// router.use("/projects", projectRouter);
+router.use("/todos", todoRouter);
 
 export default router;
