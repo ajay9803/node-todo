@@ -1,11 +1,10 @@
 import express from "express";
 
-import userRouter from "./user";
 import todoRouter from "./todo";
 
+// app - router
 const router = express();
 
-router.use("/users", userRouter);
 router.use("/todos", todoRouter);
 
 export default router;

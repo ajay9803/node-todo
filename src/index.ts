@@ -8,8 +8,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use(router);
+app.use(router); 
 
+// listen for connections on host/port
 app.listen(config.port, () => {
   console.log(`Server started listening on port: ${config.port}`);
 });

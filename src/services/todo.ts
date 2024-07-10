@@ -1,6 +1,7 @@
 import * as TodoModel from "../models/todo";
 import { Todo } from "../interfaces/todo";
 
+// create todo - return success / failure result
 export const createTodo = (todo: Todo) => {
   const todosWithId = TodoModel.todos.some((theTodo) => todo.id === theTodo.id);
   if (todosWithId) {
@@ -16,15 +17,16 @@ export const createTodo = (todo: Todo) => {
   };
 };
 
+// delete todo - return success result
 export const deleteTodo = (todoId: string) => {
   TodoModel.deleteTodo(todoId);
-  console.log("here");
   return {
     statusCode: 204,
     message: "Todo deleted successfully.",
   };
 };
 
+// fetch all todos - return success / failure result
 export const getAllTodos = () => {
   const todos = TodoModel.getAllTodos();
 
@@ -41,6 +43,7 @@ export const getAllTodos = () => {
   }
 };
 
+// fetch tody by id - return success / failure result
 export const getTodoById = (todoId: string) => {
   const todo = TodoModel.getTodoById(todoId);
 
@@ -57,6 +60,7 @@ export const getTodoById = (todoId: string) => {
   }
 };
 
+// update todo by id - return success / failure result
 export const updateTodo = (id: string, title: string, description: string) => {
   const todo = TodoModel.udpateTodo(id, title, description);
 
